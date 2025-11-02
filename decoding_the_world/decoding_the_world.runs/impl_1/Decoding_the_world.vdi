@@ -1,0 +1,138 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Oct  6 12:57:28 2025
+# Process ID: 89326
+# Log file: /home/s2524342/decoding_the_world/decoding_the_world.runs/impl_1/Decoding_the_world.vdi
+# Journal file: /home/s2524342/decoding_the_world/decoding_the_world.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source Decoding_the_world.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.2
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'SW[0]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[1]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[2]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[3]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[*]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SEG[0]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:9]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'SEG[1]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:10]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'SEG[2]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:11]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'SEG[3]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:12]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'SEG[4]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:13]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'SEG[5]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:14]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'SEG[6]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:15]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'SEG[7]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:16]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'SEG[*]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[0]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[1]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[2]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[3]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[*]'. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/s2524342/decoding_the_world/decoding_the_world.srcs/constrs_1/new/seven_seg_constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-1223] The version limit for your license is '2015.12' and will expire in -3567 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1159.113 ; gain = 10.027 ; free physical = 20803 ; free virtual = 42933
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 11e7961e9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1629.574 ; gain = 0.000 ; free physical = 20495 ; free virtual = 42625
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 2 Constant Propagation | Checksum: 11e7961e9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1629.574 ; gain = 0.000 ; free physical = 20495 ; free virtual = 42626
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 3 Sweep | Checksum: 11e7961e9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1629.574 ; gain = 0.000 ; free physical = 20495 ; free virtual = 42626
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1629.574 ; gain = 0.000 ; free physical = 20495 ; free virtual = 42626
+Ending Logic Optimization Task | Checksum: 11e7961e9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1629.574 ; gain = 0.000 ; free physical = 20495 ; free virtual = 42626
+Implement Debug Cores | Checksum: 11e7961e9
+Logic Optimization | Checksum: 11e7961e9
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 3.12 ns.
+Ending Power Optimization Task | Checksum: 11e7961e9
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1629.574 ; gain = 0.000 ; free physical = 20495 ; free virtual = 42626
+INFO: [Common 17-83] Releasing license: Implementation
+21 Infos, 19 Warnings, 19 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1629.574 ; gain = 488.492 ; free physical = 20495 ; free virtual = 42626
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/s2524342/decoding_the_world/decoding_the_world.runs/impl_1/Decoding_the_world_drc_opted.rpt.
+
+*** Halting run - EA reset detected ***
+
+
+
+    while executing
+"start_step place_design"
+    (file "Decoding_the_world.tcl" line 85)
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  6 12:57:40 2025...

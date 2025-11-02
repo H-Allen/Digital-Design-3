@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="counter_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="counter_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="3" />
+   <wvobject db_ref_id="1" type="logic" fp_name="/counter_TB/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/counter_TB/CONTROL_SWITCH">
+      <obj_property name="ElementShortName">CONTROL_SWITCH</obj_property>
+      <obj_property name="ObjectShortName">CONTROL_SWITCH</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/counter_TB/OUT">
+      <obj_property name="ElementShortName">OUT[15:0]</obj_property>
+      <obj_property name="ObjectShortName">OUT[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

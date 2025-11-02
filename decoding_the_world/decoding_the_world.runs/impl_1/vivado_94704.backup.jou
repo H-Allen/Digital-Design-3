@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Oct  6 13:27:57 2025
+# Process ID: 94108
+# Log file: /home/s2524342/decoding_the_world/decoding_the_world.runs/impl_1/seven_seg_display.vdi
+# Journal file: /home/s2524342/decoding_the_world/decoding_the_world.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source seven_seg_display.tcl -notrace

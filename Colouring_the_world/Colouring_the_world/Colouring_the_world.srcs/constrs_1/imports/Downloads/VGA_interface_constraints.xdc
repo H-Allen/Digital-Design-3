@@ -1,0 +1,32 @@
+## CloccS
+set_property -dict { PACKAGE_PIN W5 IOSTANDARD LVCMOS33 }  [get_ports CLK]
+
+## VGA interface
+set_property -dict { PACKAGE_PIN V17 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[0]]
+set_property -dict { PACKAGE_PIN V16 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[1]]
+set_property -dict { PACKAGE_PIN W16 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[2]]
+set_property -dict { PACKAGE_PIN W17 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[3]]
+set_property -dict { PACKAGE_PIN W15 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[4]]
+set_property -dict { PACKAGE_PIN V15 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[5]]
+set_property -dict { PACKAGE_PIN W14 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[6]]
+set_property -dict { PACKAGE_PIN W13 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[7]]
+set_property -dict { PACKAGE_PIN V2 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[8]]
+set_property -dict { PACKAGE_PIN T3 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[9]]
+set_property -dict { PACKAGE_PIN T2 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[10]]
+set_property -dict { PACKAGE_PIN R3 IOSTANDARD LVCMOS33 } [get_ports COLOUR_IN[11]]
+
+set_property -dict { PACKAGE_PIN G19 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[0]]
+set_property -dict { PACKAGE_PIN H19 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[1]]
+set_property -dict { PACKAGE_PIN J19 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[2]]
+set_property -dict { PACKAGE_PIN N19 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[3]]
+set_property -dict { PACKAGE_PIN N18 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[4]]
+set_property -dict { PACKAGE_PIN L18 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[5]]
+set_property -dict { PACKAGE_PIN K18 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[6]]
+set_property -dict { PACKAGE_PIN J18 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[7]]
+set_property -dict { PACKAGE_PIN J17 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[8]]
+set_property -dict { PACKAGE_PIN H17 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[9]]
+set_property -dict { PACKAGE_PIN G17 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[10]]
+set_property -dict { PACKAGE_PIN D17 IOSTANDARD LVCMOS33 } [get_ports COLOUR_OUT[11]]
+
+set_property -dict { PACKAGE_PIN P19 IOSTANDARD LVCMOS33 } [get_ports HS]
+set_property -dict { PACKAGE_PIN R19 IOSTANDARD LVCMOS33 } [get_ports VS]

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s2524342/Documents/Digital Design/Counting_the_world/Counting_the_world/Counting_the_world.srcs/sources_1/new/counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s2524342/Documents/Digital Design/Counting_the_world/Counting_the_world/Counting_the_world.srcs/sim_1/new/counter_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s2524342/Documents/Digital Design/Counting_the_world/Counting_the_world/Counting_the_world.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
