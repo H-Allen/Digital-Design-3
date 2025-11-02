@@ -3,7 +3,6 @@ module VGA_displaySM (
     input RESET,
     input [1:0] MASTER_STATE,
     output [11:0] COLOUR_OUT,
-    output [3:0] VGA_displaySM_OUT,
     output HS,
     output VS
 );
@@ -59,6 +58,5 @@ module VGA_displaySM (
 
     assign colour_in = colour_next;
     assign COLOUR_OUT = colour_out;
-    assign VGA_displaySM_OUT = vga_state;
 
 endmodule

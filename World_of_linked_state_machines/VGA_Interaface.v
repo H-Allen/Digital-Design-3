@@ -57,7 +57,7 @@ module VGA_Interface(
     wire [9:0] vert_count;
     
     // 25 MHz Clock
-    Generic_Counter #(
+    Generic_counter #(
                 .COUNTER_WIDTH(2),
                 .COUNTER_MAX(3)
             ) baseCounter (
@@ -70,7 +70,7 @@ module VGA_Interface(
     
     
     
-    Generic_Counter #(
+    Generic_counter #(
                 .COUNTER_WIDTH(10),
                 .COUNTER_MAX(520)
             ) vertCount (
@@ -83,7 +83,7 @@ module VGA_Interface(
             
 
     
-    Generic_Counter #(
+    Generic_counter #(
                 .COUNTER_WIDTH(10),
                 .COUNTER_MAX(799)
             ) horzCount (

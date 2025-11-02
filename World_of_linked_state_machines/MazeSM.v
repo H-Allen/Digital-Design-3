@@ -1,4 +1,4 @@
-module Basic_state_machine (
+module MazeSM (
     input CLK,
     input RESET,
     input BTNL,
@@ -9,32 +9,36 @@ module Basic_state_machine (
     output [3:0] MazeSM_OUT
 );
 
-//7 segment display code
-reg [3:0] curr_num;
-reg [3:0] next_num;
+    // 7-seg display code
+    reg [3:0] curr_num;
+    reg [3:0] next_num;
 
-//state machine code
-reg [3:0] curr_state;
-reg [3:0] next_state;
+    // state machine code
+    reg [3:0] curr_state;
+    reg [3:0] next_state;
 
-assign MazeSM_OUT = curr_state;
-assign DEC_OUT = curr_num;
+    assign MazeSM_OUT = curr_state;
+    assign DEC_OUT = curr_num;
 
+    // Sequential Logic: State Register
+    always @(posedge CLK) begin
+        if (RESET) begin
+            curr_state <= 4'b0000; // Idle State
+            curr_num   <= 4'b0000;
+        end
+        else begin
+            curr_state <= next_state;
+            curr_num   <= next_num;
+        end
+    end
 
-//Sequential Logic: State Register
-always @(posedge CLK) begin
-    if (RESET)
-        curr_state <= 4'b0000; // Idle State
-        curr_numb <= 4'b0000;
+    // Combinational Logic
+    always @(*) begin
+        // default assignments to avoid inferred latches
+        next_state = curr_state;
+        next_num   = curr_num;
 
-    else
-        curr_state <= next_state;
-        curr_num <= next_num;
-end
-
-//Combinational Logic
-always @(*) begin
-    case (curr_state)
+        case (curr_state)
             4'h0: begin // IDLE
                 next_num = 4'h0;  // Display 0
                 if (MASTER_STATE == 2'b01)
@@ -131,7 +135,7 @@ always @(*) begin
             end
             
             4'hF: begin // FINISHED
-                next_num = 4'7;
+                next_num = 4'h7;
                 next_state = 4'hF;  // Stay finished
             end
             

@@ -4,7 +4,7 @@ module LED_displaySM (
     input [1:0] MASTER_STATE,
     output [7:0] LED_OUT,
     output [3:0] LED_displaySM_OUT
-)
+);
 
 //Counter code
 reg [25:0] curr_count;

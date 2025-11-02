@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 06.10.2025 10:40:33
-// Design Name: 
-// Module Name: Decoding_the_world
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module Decoding_the_world(
     input [1:0] SEG_SELECT_IN,
     input [3:0] BIN_IN,
@@ -28,14 +7,15 @@ module Decoding_the_world(
     output reg [7:0] HEX_OUT
     );
 
-    always@(SEG_SELECT_IN) begin
-    case(SEG_SELECT_IN)
-        2'b00 : SEG_SELECT_OUT <= 4'b1110;
-        2'b01 : SEG_SELECT_OUT <= 4'b1101;
-        2'b10 : SEG_SELECT_OUT <= 4'b1011;
-        2'b11 : SEG_SELECT_OUT <= 4'b0111;
-        default:SEG_SELECT_OUT <= 4'b1111;
-    endcase
+    // combinational
+    always @(*) begin
+        case(SEG_SELECT_IN)
+            2'b00 : SEG_SELECT_OUT = 4'b1110;
+            2'b01 : SEG_SELECT_OUT = 4'b1101;
+            2'b10 : SEG_SELECT_OUT = 4'b1011;
+            2'b11 : SEG_SELECT_OUT = 4'b0111;
+            default: SEG_SELECT_OUT = 4'b1111;
+        endcase
     end
     
     always @(*) begin
