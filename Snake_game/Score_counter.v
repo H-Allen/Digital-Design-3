@@ -1,7 +1,10 @@
 module Score_counter (
     input CLK,
     input RESET,
-    input ENABLE,
+    input REACHED_TARGET,
     output [3:0] SEG_SELECT,
-    output [6:0] DEC_OUT
+    output [7:0] DEC_OUT,
+    output GAME_WON
 );
+
+    wire
