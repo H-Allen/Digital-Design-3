@@ -57,7 +57,7 @@ module VGA_Interface(
     wire [9:0] vert_count;
     
     // 25 MHz Clock
-    Generic_Counter #(
+    Generic_counter #(
                 .COUNTER_WIDTH(2),
                 .COUNTER_MAX(3)
             ) baseCounter (
@@ -70,7 +70,7 @@ module VGA_Interface(
     
     
     
-    Generic_Counter #(
+    Generic_counter #(
                 .COUNTER_WIDTH(10),
                 .COUNTER_MAX(520)
             ) vertCount (
@@ -83,7 +83,7 @@ module VGA_Interface(
             
 
     
-    Generic_Counter #(
+    Generic_counter #(
                 .COUNTER_WIDTH(10),
                 .COUNTER_MAX(799)
             ) horzCount (
@@ -117,7 +117,7 @@ module VGA_Interface(
     always @(posedge CLK_25) begin
         if ((horz_count >= HorzTimeToBackPorchEnd) && (horz_count < HorzTimeToDisplayTimeEnd) &&
             (vert_count >= VertTimeToBackPorchEnd) && (vert_count < VertTimeToDisplayTimeEnd))
-            COLOUR_OUT <= COLOUR_IN;   // visible area
+            COLOUR_OUT <= {COLOUR_IN[7:4], COLOUR_IN[3:0], COLOUR_IN[11:8]};   // visible area
         else
             COLOUR_OUT <= 12'h000;     // blank area
     end
