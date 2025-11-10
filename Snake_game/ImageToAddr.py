@@ -2,7 +2,7 @@ from PIL import Image
 
 # Load and resize to desired VGA display area
 img = Image.open("snake.png").convert("RGB")
-img = img.resize((64, 64))  # adjust to fit your display area
+img = img.resize((416, 416))  # adjust to fit your display area
 
 with open("snake.mem", "w") as f:
     for y in range(img.height):
