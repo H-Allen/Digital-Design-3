@@ -4,7 +4,7 @@ import os
 # Parameters
 input_image = "./background.png"       # Input file
 output_mem = "background.mem"          # Output file
-target_width, target_height = 640, 480
+target_width, target_height = 160, 120
 
 # Open, resize, and convert to RGB
 img = Image.open(input_image).resize((target_width, target_height)).convert("RGB")
