@@ -7,7 +7,8 @@ output_mem = "background.mem"          # Output file
 target_width, target_height = 160, 120
 
 # Open, resize, and convert to RGB
-img = Image.open(input_image).convert("RGB")
+img = Image.open(input_image).resize((target_width, target_height)).convert("RGB")
+img.show()
 
 with open(output_mem, "w") as f:
     for y in range(target_height):
