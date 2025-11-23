@@ -2,8 +2,8 @@ from PIL import Image
 import os
 
 # Parameters
-input_image = "./background.png"       # Input file
-output_mem = "background.mem"          # Output file
+input_image = "gameover.png"       # Input file
+output_mem = "gameover.mem"          # Output file
 target_width, target_height = 160, 120
 
 # Open, resize, and convert to RGB
