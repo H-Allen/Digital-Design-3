@@ -24,7 +24,7 @@ module VGA_displaySM (
     input CLK,
     input RESET,
     input [1:0] MASTER_STATE,
-    output [11:0] COLOUR_IN,
+    input [11:0] COLOUR_IN,
     output [11:0] COLOUR_OUT,
     output [9:0] ADDRH,
     output [8:0] ADDRV,
@@ -35,11 +35,16 @@ module VGA_displaySM (
     parameter IDLE = 2'b00;
     parameter PLAY = 2'b01;
     parameter WIN = 2'b10;
+    parameter LOSE = 2'b11;
 
     wire [11:0] colour_in;
     wire [11:0] colour_out;
     wire [9:0]  addrh;
     wire [8:0]  addrv;
+    
+    wire [7:0] img_x = addrh[9:2];
+    wire [6:0] img_y = addrv[8:2];
+    wire [14:0] img_addr = img_y * 160 + img_x;
 
     reg [11:0] colour_next;
     reg [15:0] frame_counter;
@@ -54,6 +59,15 @@ module VGA_displaySM (
             .VS(VS)
     );
     
+    (* rom_style = "distributed" *)
+    reg [11:0] idle_image [0:19199];
+    reg [11:0] lose_image [0:19199];
+    
+    initial begin
+        $readmemh("background.mem", idle_image);
+        $readmemh("gameover.mem", lose_image);
+    end
+    
     always @(posedge CLK) begin
         if (RESET) begin
             frame_counter <= 0;
@@ -64,9 +78,10 @@ module VGA_displaySM (
     end
 
     always @(*) begin
+
         case (MASTER_STATE)
             IDLE: begin 
-                colour_next = 12'h0FF;
+                colour_next = idle_image[img_addr]; 
             end
             PLAY: begin
                 colour_next = COLOUR_IN;
@@ -85,6 +100,8 @@ module VGA_displaySM (
                         colour_next <= frame_counter[15:8] - addrv[8:0] - addrh[9:0] + 240 + 320;
                 end
             end
+            LOSE:
+                colour_next = lose_image[img_addr];
         endcase
     end
 

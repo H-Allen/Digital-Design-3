@@ -28,7 +28,7 @@ module test_wrapper (
     input BTNU,
     input BTND,
     output [3:0] SEG_SELECT,
-    output [7:0] HEX_OUT,
+    output [6:0] HEX_OUT,
     output [7:0] LED_OUT,
     output [11:0] VGA_OUT,
     output HS,
@@ -39,14 +39,15 @@ module test_wrapper (
     wire [1:0] direction;
     
     //Target generator 
-    wire food_addr_h;
-    wire food_addr_v;
+    wire [7:0] food_addr_h;
+    wire [6:0] food_addr_v;
     wire target_reached;
         
     //state of master state machine: IDLE -> PLAY -> WIN
     wire [1:0] master_state;
     
     wire game_won;
+    wire game_lose;
     
     wire [11:0] vga_colour;
     
@@ -61,6 +62,7 @@ module test_wrapper (
         .BTND(BTND),
         .BTNL(BTNL),
         .GAME_WON(game_won),
+        .GAME_LOSE(game_lose),
         .MASTER_STATE(master_state)
     );
     
@@ -74,7 +76,8 @@ module test_wrapper (
         .ADDRH(addrh),
         .ADDRV(addrv),
         .COLOUR_OUT(vga_colour),
-        .TARGET_REACHED(target_reached)
+        .TARGET_REACHED(target_reached),
+        .GAME_LOSE(game_lose)
     );
 
     VGA_displaySM vga_display (

@@ -30,7 +30,8 @@ module Snake_control(
         input [9:0] ADDRH,
         input [8:0] ADDRV,
         output [11:0] COLOUR_OUT,
-        output TARGET_REACHED
+        output TARGET_REACHED,
+        output GAME_LOSE
     );
 
     parameter snake_length = 20;
@@ -47,11 +48,11 @@ module Snake_control(
     parameter RIGHT = 2'b01;
     
     //Snake movement
-    parameter MOVE_SPEED = 20'd3000000;
+    parameter MOVE_SPEED = 32'd3000000;
     wire move_enable;
     
     Generic_counter #(
-        .COUNTER_WIDTH(25),
+        .COUNTER_WIDTH(32),
         .COUNTER_MAX(MOVE_SPEED)
     ) move_counter (
         .CLK(CLK),
@@ -71,7 +72,7 @@ module Snake_control(
         begin: PinShift
             always@(posedge CLK) begin
                 if(RESET) begin
-                    SnakeState_X[PinNo+1] <= 80;
+                    SnakeState_X[PinNo+1] <= 80 - (PinNo+1); //stagger
                     SnakeState_Y[PinNo+1] <= 100;
                 end
                 else if (move_enable) begin
@@ -83,7 +84,6 @@ module Snake_control(
     endgenerate
     
     //Snake Position Update
-    integer i;
     always @(posedge CLK) begin
         if (RESET) begin
             SnakeState_X[0] <= 80;
@@ -128,7 +128,7 @@ module Snake_control(
     always @(posedge CLK) begin
         if (RESET)
             target_reached <= 1'b0;
-        else if (SnakeState_X[0] == FOOD_TARGET_H && SnakeState_Y[0] == FOOD_TARGET_V)
+        else if (move_enable && SnakeState_X[0] == FOOD_TARGET_H && SnakeState_Y[0] == FOOD_TARGET_V)
             target_reached <= 1'b1;
         else
             target_reached <= 1'b0;
@@ -138,16 +138,36 @@ module Snake_control(
     reg [11:0] colour_out;
     integer j;
     always @(*) begin
-        colour_out = 12'h0FF; // Default background (black)
+        colour_out = 12'h034; // Default background (blue)
         if ((ADDRH[9:2] == FOOD_TARGET_H) && (ADDRV[8:2] == FOOD_TARGET_V)) begin
                     colour_out = 12'hF00; // Red for food
             end
         for (j = 0; j < snake_length; j = j + 1) begin
             if ((ADDRH[9:2] == SnakeState_X[j]) && (ADDRV[8:2] == SnakeState_Y[j])) begin
-                colour_out = 12'hFFF; // Head = green
+                colour_out = 12'h0F0; // Head = green
             end
         end
     end
+    
+    reg game_lose;
+    integer i;
+    always @(posedge CLK) begin
+        if (RESET) begin
+            game_lose <= 1'b0;
+        end
+        else if (move_enable && MASTER_STATE == PLAY) begin
+            // Check if head position matches any body segment
+            game_lose <= 1'b0;  // Default: no collision
+            for (i = 1; i < snake_length; i = i + 1) begin
+                if ((SnakeState_X[0] == SnakeState_X[i]) && 
+                    (SnakeState_Y[0] == SnakeState_Y[i])) begin
+                    game_lose <= 1'b1;  // Collision detected!
+                end
+            end
+        end
+    end
+   
     assign COLOUR_OUT = colour_out;
+    assign GAME_LOSE = game_lose;
   
 endmodule  

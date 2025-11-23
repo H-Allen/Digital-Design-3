@@ -64,9 +64,9 @@ module Score_counter(
         .COUNTER_WIDTH(4),
         .COUNTER_MAX(9)
     ) ones_counter (
-        .CLK(TARGET_REACHED),
+        .CLK(CLK),
         .RESET(RESET),
-        .ENABLE(1'b1),
+        .ENABLE(TARGET_REACHED),
         .COUNT(ones_digit),
         .TRIG_OUT(ones_overflow)     // Pulses when going from 9 to 0
     );
@@ -101,7 +101,7 @@ module Score_counter(
     Seg7_decoder seg7 (
         .SEG_SELECT_IN(strobe_sel),
         .BIN_IN(mux_out),
-        .DOT_IN(1'b0),
+        .DOT_IN(1'b1),
         .SEG_SELECT_OUT(SEG_SELECT),
         .HEX_OUT(DEC_OUT)
     );
