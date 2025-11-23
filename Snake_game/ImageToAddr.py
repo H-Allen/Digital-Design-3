@@ -1,15 +1,26 @@
 from PIL import Image
+import os
 
-# Load and resize to desired VGA display area
-img = Image.open("snake.png").convert("RGB")
-img = img.resize((64, 64))  # adjust to fit your display area
+# Parameters
+input_image = "./background.png"       # Input file
+output_mem = "background.mem"          # Output file
+target_width, target_height = 160, 120
 
-with open("snake.mem", "w") as f:
-    for y in range(img.height):
-        for x in range(img.width):
+# Open, resize, and convert to RGB
+img = Image.open(input_image).resize((target_width, target_height)).convert("RGB")
+
+with open(output_mem, "w") as f:
+    for y in range(target_height):
+        for x in range(target_width):
             r, g, b = img.getpixel((x, y))
-            r >>= 4
-            g >>= 4
-            b >>= 4
-            color12 = (r << 8) | (g << 4) | b
-            f.write(f"{color12:03X}\n")
+
+            # Convert 8-bit → 4-bit by shifting right
+            r4 = r >> 4
+            g4 = g >> 4
+            b4 = b >> 4
+
+            # Pack into 12-bit RGB (0xRGB)
+            pixel_12bit = (r4 << 8) | (g4 << 4) | b4
+
+            # Write as 3-digit hex (e.g., "f34")
+            f.write(f"{pixel_12bit:03x}\n")
